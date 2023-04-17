@@ -1,0 +1,47 @@
+@use "variables" as vr;
+
+
+@mixin btn($pY: 4px, $pX: 20px) {
+    transition: .5s;
+    padding: $pY $pX;
+    border-radius: 20px;
+    border: 1px solid;
+    cursor: pointer;
+    background: transparent;
+}
+
+@mixin card {
+    text-align: center;
+    border: 1px solid rgba(36, 36, 36, 0.1);
+    border-radius: 14px;
+    padding: 22px;
+    img{
+        width: 100%;
+    }
+    p{
+        font-size: 17px;
+        color: #242424;
+        padding: 5px 0px;
+        margin: 0;
+    }
+    .cost{
+        padding: 10px 0px;
+        font-size: 20px;
+        color: vr.$bg;
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
+@mixin joyi{
+    display: flex;
+        span{
+            padding: 0px 5px;
+            font-size: 16px;
+            color: #B0B0B0;
+            &:nth-child(2){
+                color: vr.$bg;
+                border-left: 1.5px solid #B0B0B0;
+            }
+        }
+}

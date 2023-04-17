@@ -1,0 +1,117 @@
+@use "../abstracts/variables" as vr;
+@use "../abstracts/mixin" as m;
+
+
+.head {
+    background: vr.$bg;
+    .nav {
+        display: flex;
+        background: vr.$bg;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 8;
+        top: 0;
+        padding: 20px 10%;
+        #check,.open,.close,.close1{
+            display: none;
+        }
+        .logo{
+            img{
+                width: 150px;
+            }
+        }
+        .list{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+            &_item{
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 18px;
+                    transition: .6s;
+                    &:hover{
+                        color: rgb(0, 183, 255);
+                    }
+                }
+                &-login{
+                    display: inline-block;
+                    @include m.btn;
+                    border-color: white;
+                    transition: .6s;
+                    &:hover{
+                        border-color: aqua;
+                        a{
+                            color: aqua;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    @media (max-width:760px){
+        .nav{
+            .open{
+                display: block;
+                color: white;
+                font-size: 22px;
+            }
+            .close1{
+                position: fixed;
+                display: block;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.445);
+                top: 0;
+                right: -100%;
+                transition: .4s;
+            }
+            #check:checked ~ .list{
+                left: 0;
+            }
+            #check:checked ~ .close1{
+                right: 0;
+            }
+            .list{
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100vh;
+                transition: .8s;
+                background: vr.$bg;
+                flex-direction: column;
+                justify-content: center;
+                z-index: 10;
+                .close{
+                    display: block;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    @media (max-width:360px){
+        .nav{
+            .logo{
+                img{
+                    width: 130px;
+                }
+            }
+            .open{
+                font-size: 20px;
+            }
+            .list_item{
+                font-size: 16px;
+            }
+        }
+    }
+}

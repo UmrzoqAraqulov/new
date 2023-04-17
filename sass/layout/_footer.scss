@@ -1,0 +1,312 @@
+@use "../abstracts/variables" as vr;
+@use "../abstracts/mixin" as m;
+
+.footer {
+    background: vr.$bg;
+    padding-top: 180px;
+    text-align: center;
+    color: white;
+
+    &_top {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            font-size: vr.$p;
+            padding: 0;
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 32px;
+            padding: 24px 0px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        &_contact {
+            address {
+                font-size: 16px;
+                padding-bottom: 10px;
+                padding: 0;
+                margin: 0;
+            }
+
+            h3 {
+                margin: 0;
+                color: white;
+            }
+
+            .number {
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+                margin: 2px 0px;
+                &:hover {
+                    a{
+                    color: rgb(0, 195, 255);
+                    }
+                }
+            }
+        }
+
+        &_servis {
+            width: 40%;
+
+            .logo {
+                padding: 24px 0px;
+
+                img {
+                    width: 75%;
+                }
+            }
+            p{
+                margin: 0;
+                padding: 0;
+            }
+            .ij-tarmoq {
+                padding: 20px 0px;
+
+                i {
+                    font-size: 20px;
+                    margin: 0px 5px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    padding: 1px 2px;
+                }
+
+                .fa-facebook:hover {
+                    color: blue;
+                    background: white;
+                }
+
+                .fa-twitter:hover {
+                    color: rgb(0, 51, 255);
+                    background: white;
+                }
+
+                .fa-instagram:hover {
+                    color: rgb(255, 0, 170);
+                    background: white;
+                }
+            }
+        }
+
+        .work {
+            h3{
+                color: white;
+                margin: 0;
+            }
+            p {
+                padding: 2px 0px;
+                margin: 0;
+                span {
+                    font-size: 16px;
+                    padding: 1px 0px;
+                }
+            }
+        }
+    }
+
+    .text {
+        padding: 30px 0px;
+        margin: 0;
+    }
+
+    margin-top: 200px;
+    position: relative;
+
+    .position {
+        position: absolute;
+        top: -180px;
+        left: 15%;
+        width: 70%;
+        background: #BB2339;
+        box-shadow: 22px 30px 95px 1px rgba(82, 82, 82, 0.2);
+        border-radius: 20px;
+        padding: 50px 20px;
+
+        .text {
+            font-size: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: vr.$h2;
+            padding: 20px 0px;
+            margin: 0;
+            color: white;
+        }
+
+        p {
+            font-size: vr.$p;
+            padding: 0;
+            margin: 0;
+        }
+
+        form {
+            margin-top: 30px;
+
+            input {
+                width: 40%;
+                @include m.btn(10px, 20px);
+                border-color: #F5EFDB80;
+                cursor: auto;
+                color: #AAAAAA;
+
+                &::placeholder {
+                    color: #AAAAAA;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .btn {
+                @include m.btn(10px, 20px);
+                color: white;
+                border-color: white;
+
+                &:hover {
+                    color: black;
+                    background: white;
+                }
+            }
+        }
+    }
+
+    @media (max-width:1024px) {
+        &_top {
+            h3 {
+                font-size: 26px;
+                padding: 15px 0px;
+            }
+
+            p {
+                font-size: vr.$p_r;
+            }
+        }
+
+        .position {
+            .text {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: vr.$h2_r;
+                padding: 15px 0px;
+            }
+        }
+    }
+
+    @media (max-width:700px) {
+        &_top {
+            flex-wrap: wrap;
+
+            &_servis {
+                order: 1;
+                width: 100%;
+
+                .logo {
+                    img {
+                        width: 50%;
+                    }
+                }
+            }
+
+            &_contact {
+                order: 2;
+                width: 48%;
+            }
+
+            .work {
+                order: 3;
+                width: 48%;
+            }
+        }
+
+        .position {
+            .text {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 10px;
+
+                input {
+                    width: 80%;
+                }
+            }
+        }
+
+    }
+
+    @media (max-width:420px) {
+        &_top {
+            flex-direction: column;
+
+            &_servis {
+                .logo {
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+
+            &_contact {
+                width: 100%;
+            }
+
+            .work {
+                width: 100%;
+            }
+        }
+
+        .position {
+            width: 90%;
+            left: 5%;
+
+            .text {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 10px;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
+    @media (max-width:420px) {
+        padding-top: 220px;
+
+        h3 {
+            font-size: 22px;
+        }
+    }
+}

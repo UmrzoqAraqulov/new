@@ -1,0 +1,145 @@
+@use "../abstracts/mixin" as m;
+@use "../abstracts/variables" as vr;
+@import "../global";
+
+.main{
+    padding-top: 150px;
+    .joyi{
+        @include m.joyi;
+        margin: 0;    
+    }
+
+    .menu{
+        display: grid;
+        grid-template-columns: repeat(2);
+        padding: 50px 0px;
+        .ap-tab{
+            width: 360px;
+            grid-column: 1 / 2;
+            background: vr.$bg;
+            padding: 40px;
+            height: 550px;
+            border-radius: 20px;
+            color: white;
+            h3{
+                width: 100%;
+                font-size: 30px;
+                margin:0px 0px 20px 0px;
+                color: white;
+                padding: 0;
+            }
+            ul {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                li{
+                    @include m.btn;
+                    margin: 15px 0px;
+                    width: max-content;
+                    font-size: 16px;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                    }
+                    &:hover{
+                        a{
+                            color: black;
+                        }
+                        background: white;
+                    }
+                }
+            }
+        }
+        .ap-tab-container {
+            grid-column: 2 / 3;
+        }
+        .active-tab{
+            display: grid;
+            grid-template-columns: repeat(2);
+            margin-left: 20px;
+            .sec2_box{
+                margin: 5px;
+                @include m.card;
+                width: 45%;
+                display: inline-block;
+            }
+        }
+
+
+        position: relative;
+        .position{
+            position: absolute;
+            top: 650px;
+            left: 20%;
+            img{
+                width: 100px;
+            }
+        }
+        @media (max-width:1100px){
+            .ap-tab{
+                width: 270px;
+            }
+        }
+        @media (max-width:910px){
+            .ap-tab{
+                position: fixed;
+                top: 80px;
+                left: -250px;
+                transition: .5s;
+                &:hover{
+                    left: 0;
+                }
+            }
+            .active-tab{
+                margin: 0;
+                .sec2_box{
+                    width: 48%;
+                }
+            }
+            .position{
+                display: none;
+            }
+        }
+        @media (max-width:770px){
+            .active-tab{
+                .sec2_box{
+                    width: 46%;
+                }
+            }
+        }
+        @media (max-width:620px){
+            .ap-tab{
+                h3{
+                    font-size: 24px;
+                }
+                ul li{
+                    font-size: 14px;
+                }
+            }
+            .active-tab{
+                .sec2_box{
+                    p{
+                        font-size: 15px;
+                    }
+                    .cost{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        @media (max-width:500px){
+            .active-tab{
+                .sec2_box{
+                    width: 90%;
+                    &:nth-child(12),&:nth-child(11),&:nth-child(10),&:nth-child(9),&:nth-child(8){
+                        display: none;
+                    }
+                }
+            }
+        }
+       
+    }
+}
+@import "../components/galery_insta";
+
+@import "../layout/footer"

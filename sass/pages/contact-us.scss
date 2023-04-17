@@ -1,0 +1,300 @@
+ @use "../abstracts/mixin" as m;
+ @use "../abstracts/variables" as vr;
+
+ @import "../global";
+
+ .main {
+     margin-top: 130px;
+
+     .joyi {
+         @include m.joyi;
+         span{
+            cursor: pointer;
+         }
+     }
+
+     h2 {
+         text-align: center;
+         font-size: 50px;
+         font-weight: 600;
+         padding: 10px 0px 0px;
+     }
+
+     h3 {
+         text-align: center;
+         font-size: 34px;
+         padding: 20px 0px;
+     }
+
+     .spoon {
+         text-align: center;
+
+         img {
+             width: 30px;
+         }
+     }
+
+     .murojat {
+         padding: 20px 0px;
+         display: flex;
+         justify-content: space-between;
+
+         .boglanish {
+             width: 35%;
+
+             .box {
+                 border: 1px solid rgba(36, 36, 36, 0.1);
+                 border-radius: 14px;
+                 display: flex;
+                 gap: 20px;
+                 align-items: center;
+                 padding: 15px;
+                 margin: 15px 0px;
+                 width: 90%;
+
+                 .icon {
+                     padding: 10px 13px;
+                     background: #2424240D;
+                     border-radius: 50%
+                 }
+                 &:hover{
+                    box-shadow: 2px 2px 4px rgb(136, 136, 136);
+                 }
+             }
+         }
+
+         .registr {
+             width: 65%;
+             margin: 15px 0px;
+             padding: 30px;
+             border: 1px solid rgba(36, 36, 36, 0.1);
+             border-radius: 14px;
+
+             h4 {
+                 font-size: 34px;
+             }
+             p{
+                font-size: 16px;
+                color: #242424;
+                padding: 15px 0px;
+                width: 95%;
+             }
+             form{
+                input{
+                    width: 47%;
+                    background: transparent;
+                    padding: 10px;
+                    border-radius: 10px;
+                    margin: 5px;
+                    border: 1px solid rgba(51, 34, 68, 0.1);
+                    font-size: 16px;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                textarea{
+                    width: 100%;
+                    height: 100px;
+                    font-size: 16px;
+                    margin: 10px 0px;
+                    border-radius: 10px;
+                    padding: 20px;
+                    border: 1px solid rgba(36, 36, 36, 0.1);
+                    &:focus{
+                        outline: none;
+                    }
+                    color: #333333
+                }
+                button{
+                    @include m.btn(10px,25px);
+                    background: vr.$bg;
+                    color: white;
+                    font-size: 18px;
+                    &:hover{
+                        color:vr.$bg;
+                        background: white;
+                    }
+                }
+             }
+         }
+     }
+     @media (max-width:910px){
+        .joyi span{
+            font-size: 13px;
+        }
+        h2{
+            font-size: 42px
+        }
+        .murojat{
+            .boglanish{
+                width: 40%;
+                .box{
+                    gap: 10px;
+                    padding: 12px;
+                    .text{
+                        font-size: 14px
+                    }
+                }
+            }
+            .registr{
+                width: 60%;
+                padding: 10px 25px;
+                h4{
+                    font-size: 28px;
+                }
+                p{
+                    font-size: 14px;
+                }
+                form{
+                    input{
+                        font-size: 14px;
+                        width: 90%;
+                    }
+                    textarea{
+                        font-size: 14px;
+                    }
+                    button{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        h3{
+            font-size: 30px;
+        }
+        .xarita{
+            iframe{
+                height: 400px;
+            }
+        }
+     }
+     @media (max-width:680px){
+        h2{
+            font-size: 36px;
+        }
+        .spoon{
+            img{
+                width: 25px;
+            }
+        }
+        .murojat{
+            flex-direction: column;
+            .boglanish{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+                .box{
+                    width: 200px;
+                    margin: 0;
+                }
+            }
+            .registr{
+                width: 100%;
+            }
+        }
+        
+     }
+     @media (max-width:538px){
+        h2{
+            font-size: 32px;
+        }
+        .murojat{
+            .boglanish{
+                .box{
+                    width: 80%;
+                    gap: 30px;
+                    font-size: 18px;
+                    .text{
+                        font-size: 16px;
+                    }
+                }
+            }
+            .registr{
+                h4{
+                    font-size: 26px;
+                }
+                width: 100%;
+            }
+        }
+        h3{
+            font-size: 30px;
+        }
+        .xarita{
+            iframe{
+                height: 300px;
+            }
+        }
+     }
+     @media (max-width:390px){
+        .joyi span{
+            font-size: 12px;
+        }
+        h2{
+            font-size: 26px;
+        }
+        .spoon img{
+            width: 20px;
+        }
+        .murojat{
+            .boglanish{
+                .box{
+                    width: 100%;
+                }
+            }
+            .registr{
+                h4{
+                    font-size: 22px;
+                }
+                p{
+                    font-size: 13px;
+                }
+                width: 100%;
+                form{
+                    input{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        h3{
+            font-size: 24px;
+        }
+     }
+     @media (max-width:310px){
+        .murojat{
+            .boglanish{
+                .box{
+                    gap: 10px;
+                    font-size: 16px;
+                    .text{
+                        font-size: 14px;
+                    }
+                }
+            }
+            .registr{
+                h4{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 12px;
+                }
+                width: 100%;
+                form{
+                    input{
+                        font-size: 13px;
+                    }
+                    button{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        h3{
+            font-size: 20px;
+        }
+     }
+ }
+
+ @import "../layout/footer";

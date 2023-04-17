@@ -1,0 +1,16 @@
+ @use "../abstracts/mixin" as m;
+ @use "../abstracts/variables" as vr;
+ @import "../global";
+main{
+    .joyi{
+        margin-top: 140px;
+        @include m.joyi;
+    }
+    @import "../components/news-main";
+    @media (max-width:600px){
+        .joyi span{
+            font-size: 14px
+        }
+    }
+}
+ @import "../layout/footer";
